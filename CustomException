@@ -1,0 +1,74 @@
+package com.Madina;
+
+import java.io.IOException;
+
+public class Main {
+
+    public static void main(String[] args) {
+        try {
+            ExceptionsDemo.show();
+        } catch (Throwable e) {
+            System.out.println("An unexpected error occured");
+        }
+    }
+}
+
+
+
+//2
+package com.Madina;
+
+import exceptions.Account;
+import exceptions.InsufficientFundsException;
+
+public class ExceptionsDemo {
+    public static void show(){
+
+        var account = new Account();
+        try {
+            account.withdraw(10);
+        } catch (InsufficientFundsException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+}
+
+
+//3 package Exception
+package exceptions;
+
+import java.io.IOException;
+
+public class Account {
+    private float balance;
+
+    public void deposit(float value) throws IOException {
+        if(value <= 0)
+            throw new IOException();
+//if we wanna throw IOException we have to specify it above with "throws"
+    }
+
+    public void withdraw(float value) throws InsufficientFundsException {
+        if(value > balance)
+            throw new InsufficientFundsException();
+    }
+}
+
+
+package exceptions;
+
+//Checked or unchecked???
+//Checked-> Exception
+//Unchecked(runtime)-> RunTimeException
+
+public class InsufficientFundsException extends Exception{
+    public InsufficientFundsException() {
+        super("Insufficient funds in your account");
+    }
+
+    public InsufficientFundsException(String message){
+        super(message);
+    }
+}
+
