@@ -25,6 +25,6 @@ public class Utils {
         User x = users.get(0);//returns instance of the capture class
 //        Instructor x = users.get(0);//returns instance of the capture class
         //comp err -> bc Instructor and CAP are two diff types. It's like assigning int to String
-        users.add();
+//        users.add();
     }
 }
