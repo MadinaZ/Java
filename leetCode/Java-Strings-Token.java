@@ -21,3 +21,19 @@ public class Solution {
         scan.close();
     }
 }
+
+//Input: He is a very very good boy, isn't he?
+/* 
+Output:
+10
+He
+is
+a
+very
+very
+good
+boy
+isn
+t
+he
+*/
